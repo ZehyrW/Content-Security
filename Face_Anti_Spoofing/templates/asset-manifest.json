@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c09fdf48.css",
+    "main.js": "/static/js/main.8fe63f61.js",
+    "static/js/453.913ca434.chunk.js": "/static/js/453.913ca434.chunk.js",
+    "static/media/汉仪尚巍手书.TTF": "/static/media/汉仪尚巍手书.fbc0eb24712ed1a09257.TTF",
+    "static/media/process.png": "/static/media/process.b79c924b6d513a0e9784.png",
+    "static/media/350.jpg": "/static/media/350.af6fc64451892eb2351f.jpg",
+    "static/media/top-modified.jpeg": "/static/media/top-modified.4620ea9dd724c6c16fe8.jpeg",
+    "static/media/logo2.png": "/static/media/logo2.e58251abc22fcafaa6de.png",
+    "static/media/flask.png": "/static/media/flask.9b1c26e6a987608a3499.png",
+    "static/media/model_2.png": "/static/media/model_2.4672c480a25a74502853.png",
+    "static/media/react.png": "/static/media/react.5368fcebea3e0208591e.png",
+    "index.html": "/index.html",
+    "main.c09fdf48.css.map": "/static/css/main.c09fdf48.css.map",
+    "main.8fe63f61.js.map": "/static/js/main.8fe63f61.js.map",
+    "453.913ca434.chunk.js.map": "/static/js/453.913ca434.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c09fdf48.css",
+    "static/js/main.8fe63f61.js"
+  ]
+}
