@@ -36,13 +36,13 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 
 _logger = logging.getLogger(__name__)
 
-font_path = r"E:\\High_School_Material\\大三下\\内容安全\\实验\\2021302191791-王卓-内容安全实验六\\front_end\\src\\assets\\汉仪尚巍手书.TTF"
+font_path = r""
 font = ImageFont.truetype(font_path, 20)
 
 #百度API
-APP_ID = '69334548'
-API_KEY = 'r5UbMwRSQNeAg9QI1UydrZ29'
-SECRET_KEY = 't2lteblxtyONQC4xVfZA6PQczZu6xK74'
+APP_ID = ''
+API_KEY = ''
+SECRET_KEY = ''
 client = AipFace(APP_ID, API_KEY, SECRET_KEY)
 
 # 载入dlib的人脸检测器和特征模型
@@ -210,7 +210,7 @@ def identify_face(face_descriptor, features):
     return identity, student_id
 
 def create_id2file_map():
-    dataset_path = r'E:\\High_School_Material\\大三下\\内容安全\\实验\\2021302191791-王卓-内容安全实验六\\face_anti_spoofing\\pics'
+    dataset_path = r'pics'
     entries = os.listdir(dataset_path)
 
     files = [entry for entry in entries if os.path.isfile(os.path.join(dataset_path, entry))]
@@ -344,7 +344,7 @@ def api():
                         # print(student_name)
 
                         base64_file = ''
-                        full_path = os.path.join(r'E:\\High_School_Material\\大三下\\内容安全\\实验\\2021302191791-王卓-内容安全实验六\\face_anti_spoofing\\pics', cur_face_info.name + '.png')
+                        full_path = os.path.join(r'pics', cur_face_info.name + '.png')
 
                         if os.path.exists(full_path):
                             img = cv.imdecode(np.fromfile(full_path, dtype=np.uint8), cv.IMREAD_COLOR)
@@ -405,8 +405,7 @@ def model():
                     final_live_status = '真'
                 else:
                     final_live_status = '假'
-            # label = f"{student_id}-{identity},{live_status:.2f},{final_live_status}"  # 将整体结果作为标签
-                label = f"2021302191791-王卓,{live_status:.2f},{final_live_status}"  # 将整体结果作为标签
+                label = f"{student_id}-{identity},{live_status:.2f},{final_live_status}"  # 将整体结果作为标签
 
                 cv.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 3)
                 frame = draw_label(frame, label, (x1, y1 - 30), font, (255, 255, 255))
@@ -414,11 +413,9 @@ def model():
                 byte_data = buffer.tobytes()
                 base64_data = base64.b64encode(byte_data).decode('utf-8')
                 socketio.emit('handle_capture', base64_data, namespace='/capture')
-                student_id = '2021302191791'
-                identity = '王卓'
                 filename = id_map[student_id]
                 base64_file = ''
-                full_path = os.path.join(r'E:\\High_School_Material\\大三下\\内容安全\\实验\\2021302191791-王卓-内容安全实验六\\face_anti_spoofing\\pics', filename)
+                full_path = os.path.join(r'pics', filename)
                 if os.path.exists(full_path):
                     img = cv.imdecode(np.fromfile(file=full_path, dtype=np.uint8), cv.IMREAD_COLOR)
                     ret, buffer = cv.imencode('.jpg', img)
@@ -462,7 +459,7 @@ def model_2():
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
     client = AipFace(APP_ID, API_KEY, SECRET_KEY)
-    id_map = map_id_name(r'E:\\High_School_Material\\大三下\\内容安全\\实验\\2021302191791-王卓-内容安全实验六\\face_anti_spoofing\\pics')
+    id_map = map_id_name(r'pics')
     while True:
         if file_stream and not vs.more():
             break
@@ -531,13 +528,11 @@ def model_2():
             byte_data = buffer.tobytes()
             base64_data = base64.b64encode(byte_data).decode('utf-8')
             socketio.emit('handle_capture', base64_data, namespace='/capture')
-            # student_id = '2021302191791'
             student_id = userid
-            # identity = '王卓'
             identity = id_map[userid]
             base64_file = ''
             filename  = student_id + '-' + identity
-            file_path = os.path.join(r'E:\\High_School_Material\\大三下\\内容安全\\实验\\2021302191791-王卓-内容安全实验六\\face_anti_spoofing\\pics',  filename)
+            file_path = os.path.join(r'pics',  filename)
             supported_formats = ['.png', '.jpg', '.jpeg', '.gif', '.bmp']
 
             for ext in supported_formats:
