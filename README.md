@@ -53,4 +53,4 @@ app.py		      # Demo展示
 > 下载上述模型到Face Anti-Spoofing文件夹内
 
 ## 流程图
-！[image][https://github.com/ZehyrW/Content-Security/blob/master/Face_Anti_Spoofing/process.png]
+![image][https://github.com/ZehyrW/Content-Security/blob/master/Face_Anti_Spoofing/process.png]
