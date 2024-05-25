@@ -14,14 +14,14 @@ module/         # API依赖的关键模块
   face_process.py           # 调用 ArcFace，集成人脸识别、活体检测等异步操作
   image_source.py           # 提供视频帧
   text_renderer.py          # 渲染中文
-pics/		        # 存放人脸数据
-static/		      # 编译得到的静态链接
+pics/	        # 存放人脸数据
+static/	        # 编译得到的静态链接
 templates/      # 编译得到的index文件
   index.html
 profile.yml     # Demo 的配置文件
 demo.py         # 生成人脸数据库缓存
 get_features.py # 生成人脸数据库特征向量
-app.py		      # Demo展示
+app.py	        # Demo展示
 ```
 
 ## 操作指导
