@@ -3,25 +3,25 @@
 ## 项目结构(Face Anti-Spoofing)
 
 ```text
-lib/          # 存放 ArcFace SDK 库
+lib/            # 存放 ArcFace SDK 库
   windows_64/
-arcface/      # 用 Python 对 ArcFace SDK 封装的模块
+arcface/        # 用 Python 对 ArcFace SDK 封装的模块
   arcface.py                # ArcFace SDK 的 Python 接口
   arcsoft_face_func.py      # ArcFace SDK 里提供的函数
   arcsoft_face_struct.py    # ArcFace SDK 里有的结构体
   tools.py                  # 内包含一些辅助工具
-module/       # API依赖的关键模块
+module/         # API依赖的关键模块
   face_process.py           # 调用 ArcFace，集成人脸识别、活体检测等异步操作
   image_source.py           # 提供视频帧
   text_renderer.py          # 渲染中文
-pics/		  # 存放人脸数据
-static/		  # 编译得到的静态链接
-templates/    # 编译得到的index文件
+pics/		        # 存放人脸数据
+static/		      # 编译得到的静态链接
+templates/      # 编译得到的index文件
   index.html
-profile.yml   # Demo 的配置文件
-demo.py       # 生成人脸数据库缓存
+profile.yml     # Demo 的配置文件
+demo.py         # 生成人脸数据库缓存
 get_features.py # 生成人脸数据库特征向量
-app.py		  # Demo展示
+app.py		      # Demo展示
 ```
 
 ## 操作指导
@@ -51,3 +51,6 @@ app.py		  # Demo展示
 - [dlib_face_recognition_resnet_model_v1.dat](http://dlib.net/files/)
 
 > 下载上述模型到Face Anti-Spoofing文件夹内
+
+## 流程图
+！[img][https://github.com/ZehyrW/Content-Security/edit/master/Face_Anti_Spoofing/process.png]
